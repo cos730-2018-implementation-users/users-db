@@ -19,7 +19,5 @@ volumes:
   users-db-volume-apps:
 
 networks:
-  default:
-    external:
-      name: users-network
-    
+  users-network:
+    external: true
