@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  users-db:
+    image: arangodb/arangodb
+    container_name: users-db
+    volumes:
+      - users-db-volume-data:/var/lib/arangodb3
+      - users-db-volume-apps:/var/lib/arangodb3-apps
+    ports:
+      - "8529:8529"
+    environment:
+      - ARANGO_ROOT_PASSWORD=mysecretpassword
+
+volumes:
+  users-db-volume-data:
+  users-db-volume-apps:
